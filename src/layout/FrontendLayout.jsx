@@ -45,7 +45,10 @@ function FrontendLayout() {
     menuOffcanvas.current = new bootstrap.Offcanvas(
       document.getElementById("menuOffcanvas"),
     );
+    getCart();
+  }, [cartsCount]);
 
+  useEffect(() => {
     const handleScroll = () => {
       // 偵測是否向下捲動超過 100px
       if (window.scrollY > 100) {
@@ -55,20 +58,22 @@ function FrontendLayout() {
       }
 
       // 判斷是否向上捲動
-      if (window.scrollY <= lastScrollY && window.scrollY > 100) {
+      if (window.scrollY <= lastScrollY) {
         setIsStickySub(false);
-      } else setIsStickySub(true);
+      } else {
+        setIsStickySub(true);
+      }
 
-      setLastScrollY(window.scrollY);
+      setTimeout(() => {
+        setLastScrollY(window.scrollY);
+      }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    getCart();
-  }, [cartsCount, lastScrollY]);
+  }, [lastScrollY]);
 
   return (
     <>
