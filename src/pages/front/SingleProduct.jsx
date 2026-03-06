@@ -12,6 +12,7 @@ function SingleProduct() {
   const { handleCartChange } = useOutletContext();
   const [btnLoadingId, setBtnLoadingId] = useState(null);
   const { showSuccessMsg, showErrorMsg } = useMessage();
+  const [primaryImage, setPrimaryImage] = useState(null);
 
   const getSingleProduct = async (id) => {
     try {
@@ -20,6 +21,7 @@ function SingleProduct() {
       );
 
       setProduct(response.data.product);
+      setPrimaryImage(response.data.product.imageUrl);
     } catch (error) {
       console.error(error.response?.data);
     }
@@ -71,64 +73,97 @@ function SingleProduct() {
             <i className="bi bi-bluesky me-2"></i>日本女裝
           </h1>
         </div>
-        <div className="m-1 row justify-content-between">
-          <div className="col-9 d-flex flex-wrap justify-content-start">
-            <div className="images-thumbnails bigger">
-              <img src={product.imageUrl} alt="" />
-            </div>
-            {product.imagesUrl
-              ? product.imagesUrl.map((img) => (
-                  <div className="images-thumbnails bigger" key={img}>
-                    <img src={img} alt="" />
-                  </div>
-                ))
-              : ""}
-          </div>
-          <div className="col-3 shadow-sm">
-            <div className="py-3 border-bottom">
-              <h5
-                className="card-title fw-bold fs-4"
-                style={{ color: "#785571" }}
-              >
-                <span
-                  className="badge me-1 mb-1"
-                  style={{
-                    backgroundColor: "#785571",
-                    borderRadius: "0px",
-                  }}
-                >
-                  {product.category}
-                </span>
-                {product.title}
-              </h5>
-            </div>
-
-            <div className="fst-italic my-2">
-              <div className="text-secondary text-decoration-line-through py-2">
-                原價：{product.origin_price}
-              </div>
-              <div className="py-2" style={{ color: "#977b91" }}>
-                特價：{product.price}
-              </div>
-            </div>
-
-            <div className="py-2  border-bottom">{product.description}</div>
-            <div className="py-2  border-bottom">{product.content}</div>
-
-            <button
-              id="addToCartBtn"
-              className="btn mybtn my-3"
-              disabled={btnLoadingId && true}
-              onClick={(e) => addToCart(e, product.id)}
-              style={{ borderRadius: "0px" }}
+        <div className="py-1 border-top border-bottom">
+          <h5 className="fw-bold fs-4 text-start" style={{ color: "#785571" }}>
+            <span
+              className="badge me-1 mt-1"
+              style={{
+                backgroundColor: "#785571",
+                borderRadius: "0px",
+              }}
             >
-              {btnLoadingId && btnLoadingId === "addToCartBtn" ? (
-                <Loading isShow={btnLoadingId} size={"20"}></Loading>
-              ) : (
-                <i className="bi bi-cart-plus"></i>
-              )}
-              加入購物車
-            </button>
+              {product.category}
+            </span>
+            {product.title}
+          </h5>
+        </div>
+        <div className="m-1 row justify-content-between">
+          <div className="col-lg-8 col-12 d-flex flex-wrap justify-content-start">
+            <div className="row">
+              <div className="col-lg-9 col-12">
+                <div className="">
+                  <img
+                    src={primaryImage}
+                    alt=""
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3  col-12">
+                <div className="d-flex flex-wrap justify-content-start">
+                  <div
+                    className="images-thumbnails"
+                    style={{ width: "130px", height: "130px" }}
+                  >
+                    <img
+                      src={product.imageUrl}
+                      onClick={() => setPrimaryImage(product.imageUrl)}
+                      alt=""
+                      style={{ overflow: "hidden" }}
+                    />
+                  </div>
+                  {product.imagesUrl
+                    ? product.imagesUrl.map((img) => (
+                        <div
+                          className="images-thumbnails"
+                          key={img}
+                          style={{ width: "130px", height: "130px" }}
+                        >
+                          <img
+                            src={img}
+                            onClick={() => setPrimaryImage(img)}
+                            alt=""
+                            style={{ overflow: "hidden" }}
+                          />
+                        </div>
+                      ))
+                    : ""}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-12 ">
+            <div className="my-1 p-3 shadow-sm border-bottom text-start">
+              {product.content}
+            </div>
+
+            <div className="shadow-sm">
+              <div className="fst-italic my-2">
+                <div className="text-secondary text-decoration-line-through py-2">
+                  原價：{product.origin_price}
+                </div>
+                <div className="py-2" style={{ color: "#977b91" }}>
+                  特價：{product.price}
+                </div>
+              </div>
+
+              <div className="py-2  border-bottom">{product.description}</div>
+
+              <button
+                id="addToCartBtn"
+                className="btn mybtn my-3"
+                disabled={btnLoadingId && true}
+                onClick={(e) => addToCart(e, product.id)}
+                style={{ borderRadius: "0px" }}
+              >
+                {btnLoadingId && btnLoadingId === "addToCartBtn" ? (
+                  <Loading isShow={btnLoadingId} size={"20"}></Loading>
+                ) : (
+                  <i className="bi bi-cart-plus"></i>
+                )}
+                加入購物車
+              </button>
+            </div>
           </div>
         </div>
       </div>

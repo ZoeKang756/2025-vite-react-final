@@ -58,10 +58,10 @@ function FrontendLayout() {
       }
 
       // 判斷是否向上捲動
-      if (window.scrollY  > lastScrollY ) {
-        setIsStickySub(true);
+      if (window.scrollY > lastScrollY) {
+        // setIsStickySub(true);
       } else {
-        setIsStickySub(false);
+        // setIsStickySub(false);
       }
 
       setTimeout(() => {

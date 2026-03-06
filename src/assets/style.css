@@ -225,9 +225,4 @@ div.offcanvas-body .navbar-nav a.nav-link {
   padding: 15px 10px;
 }
 
-.scrollspy-content {
-    position: relative;
-    height: 200px;
-    margin-top: .5rem;
-    overflow: auto;
-}
+
