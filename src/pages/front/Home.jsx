@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router";
 import pic1 from "/images/622706233_1495709359230857_4968142213626478764_n.jpg";
 import carouselPic1 from "/images/photo-1612423284934-2850a4ea6b0f.jpg";
 import carouselPic2 from "/images/photo-1441984904996-e0b6ba687e04.jpg";
@@ -22,50 +23,7 @@ function Home() {
     "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F759885076812126%2F&show_text=false&width=267&t=0";
   return (
     <>
-      <div id="homeCarouselRide" className="carousel slide" data-bs-ride="true">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={carouselPic1} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={carouselPic2} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={carouselPic3} className="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#homeCarouselRide"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#homeCarouselRide"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-      <div
-        className="my-2 rounded-top py-1"
-        style={{ backgroundColor: "#bfb3c2" }}
-      >
-        <h1 className="fs-5 pt-2 ps-1 text-start text-white">
-          <i className="bi bi-balloon-heart me-2"></i>最新消息
-        </h1>
+      <div className="py-1" style={{ backgroundColor: "#bfb3c2" }}>
         <div>
           <div
             id="carouselExampleIndicators"
@@ -113,10 +71,7 @@ function Home() {
                       />
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                      <div
-                        className="p-3 h-100"
-                        style={{ backgroundColor: "#fbf4fc" }}
-                      >
+                      <div className="p-3 h-100">
                         <h1 className="fs-4">🧧新春休假公告🧧</h1>
                         <p>
                           明天2/15還有營業喔，年前最後一個營業日 也是最後出貨日
@@ -151,10 +106,7 @@ function Home() {
                       />
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                      <div
-                        className="p-3  h-100"
-                        style={{ backgroundColor: "#fbf4fc" }}
-                      >
+                      <div className="p-3  h-100">
                         <h1 className="fs-4">🧧 Inod 換季出清限時登場！🧧</h1>
 
                         <p>都只有一件，別人先選走就沒有囉</p>
@@ -198,10 +150,7 @@ function Home() {
                       />
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                      <div
-                        className="p-3  h-100"
-                        style={{ backgroundColor: "#fbf4fc" }}
-                      >
+                      <div className="p-3  h-100">
                         <h1 className="fs-4">
                           🧧我們新增了LINE 官方＋LINE 社群囉！🧧
                         </h1>
@@ -255,15 +204,51 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <div className="row my-3 mx-1 " style={{ color: "#916688" }}>
+        <div className="col-lg-3 col-6">
+          <div
+            className="rounded fs-5 shadow py-3 m-1"
+            style={{ backgroundColor: "#e2d3d9", margin: "1px" }}
+          >
+            <i className="bi bi-claude"></i> 穿 搭 側 拍
+          </div>
+        </div>
+        <div className="col-lg-3 col-6">
+          <div
+            className="rounded fs-5 shadow py-3 m-1"
+            style={{ backgroundColor: "#e7d4ed" }}
+          >
+            <i className="bi bi-bag-heart"></i> 闆 娘 推 薦
+          </div>
+        </div>
+        <div className="col-lg-3 col-6">
+          <div
+            className="rounded fs-5 shadow py-3 m-1"
+            style={{ backgroundColor: "#f9d5ea" }}
+          >
+            <i className="bi bi-airplane-engines-fill"></i> 連 線 許 願
+          </div>
+        </div>
+        <div className="col-lg-3 col-6">
+          <div
+            className="rounded fs-5 shadow py-3 m-1"
+            style={{ backgroundColor: "#e7effe" }}
+          >
+            <i className="bi bi-clipboard-heart-fill"></i> 現 貨 優 惠
+          </div>
+        </div>
+      </div>
+
       <div>
         <div
           className="d-flex justify-content-between py-1 align-items-center"
-          style={{ backgroundColor: "#bfb3c2", color: "#785571" }}
+          style={{ backgroundColor: "#eadceb", color: "#785571" }}
         >
-          <h1 className="fs-5 pt-2 ps-1 text-start text-white">
+          <h1 className="fs-5 pt-2 ps-1 text-start">
             <i className="bi bi-balloon-fill"></i>限時優惠活動
           </h1>
-          <div className="fw-bold text-white pe-1">
+          <div className="fw-bold pe-1">
             更多活動 <i className="bi bi-chevron-double-right"></i>
           </div>
         </div>
@@ -283,13 +268,15 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">秋冬外套節</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                秋冬外套節
+              </h5>
               <p className="card-text text-secondary">
                 📣只有3天📣1/28、29、30 任選活動區「自選品大衣」
                 全單商品不限金額,每滿3000現折300，超划算機會難得喔！
               </p>
               <a href="#" className="btn mybtn">
-                <i className="bi bi-yelp"></i> Go somewhere
+                <i className="bi bi-yelp"></i> 來去逛逛
               </a>
             </div>
           </div>
@@ -307,12 +294,14 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">春夏新款</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                春夏新款
+              </h5>
               <p className="card-text text-secondary">
                 限時優惠85折，現貨有限，喜歡要快點帶回家喔!慢來就沒有了
               </p>
               <a href="#" className="btn mybtn">
-                <i className="bi bi-yelp"></i> Go somewhere
+                <i className="bi bi-yelp"></i> 來去逛逛
               </a>
             </div>
           </div>
@@ -333,12 +322,14 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">日本連線快閃</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                日本連線快閃
+              </h5>
               <p className="card-text text-secondary">
                 限時優惠85折，現貨有限，喜歡要快點帶回家喔!慢來就沒有了
               </p>
               <a href="#" className="btn mybtn">
-                <i className="bi bi-yelp"></i> Go somewhere
+                <i className="bi bi-yelp"></i> 來去逛逛
               </a>
             </div>
           </div>
@@ -357,12 +348,14 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">秋冬現貨折扣</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                秋冬現貨折扣
+              </h5>
               <p className="card-text text-secondary">
                 限時優惠85折，現貨有限，喜歡要快點帶回家喔!慢來就沒有了
               </p>
               <a href="#" className="btn mybtn">
-                <i className="bi bi-yelp"></i> Go somewhere
+                <i className="bi bi-yelp"></i> 來去逛逛
               </a>
             </div>
           </div>
@@ -371,12 +364,12 @@ function Home() {
       <div>
         <div
           className="d-flex justify-content-between py-1 align-items-center"
-          style={{ backgroundColor: "#bfb3c2", color: "#785571" }}
+          style={{ backgroundColor: "#eadceb", color: "#785571" }}
         >
-          <h1 className="fs-5 pt-2 ps-1 text-start text-white">
+          <h1 className="fs-5 pt-2 ps-1 text-start">
             <i className="bi bi-balloon-fill"></i>新品穿拍
           </h1>
-          <div className="fw-bold text-white pe-1">
+          <div className="fw-bold pe-1">
             更多影片 <i className="bi bi-chevron-double-right"></i>
           </div>
         </div>
@@ -391,7 +384,9 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">秋冬外套節</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                秋冬外套節
+              </h5>
             </div>
           </div>
           <div
@@ -403,7 +398,9 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">春夏新款</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                春夏新款
+              </h5>
             </div>
           </div>
           <div
@@ -415,7 +412,9 @@ function Home() {
             </div>
 
             <div className="card-body">
-              <h5 className="card-title">日本連線快閃</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                日本連線快閃
+              </h5>
             </div>
           </div>
 
@@ -428,7 +427,9 @@ function Home() {
             </div>
 
             <div className="card-body ">
-              <h5 className="card-title">秋冬現貨折扣</h5>
+              <h5 className="card-title" style={{ color: "#785571" }}>
+                秋冬現貨折扣
+              </h5>
             </div>
           </div>
         </div>
@@ -436,24 +437,25 @@ function Home() {
       <div>
         <div
           className="py-1"
-          style={{ backgroundColor: "#bfb3c2", color: "#785571" }}
+          style={{ backgroundColor: "#eadceb", color: "#785571" }}
         >
-          <h1 className="fs-5 pt-2 ps-1 text-start text-white">
-            <i className="bi bi-balloon-heart"></i> 關於 Inod
+          <h1 className="fs-5 pt-2 ps-1 text-start">
+            <i className="bi bi-balloon-heart"></i> 聯絡 Inod
           </h1>
         </div>
         <div
           className="text-start p-2 mb-3"
-          style={{ color: "#958c98", border: "solid 1px #bfb3c2 " }}
+          style={{ color: "#958c98", border: "solid 1px #eadceb " }}
         >
           <div>
-            <div >
+            <div>
               <p>
                 <i className="bi bi-geo-alt-fill"></i> 地址： 320
                 新竹縣竹北市莊敬五街43號1樓
               </p>
               <p>
-                <i className="bi bi-facebook"></i> <a href="#">Inod日本精品服飾</a>
+                <i className="bi bi-facebook"></i>{" "}
+                <a href="#">Inod日本精品服飾</a>
               </p>
               <p>
                 <i className="bi bi-telephone-fill"></i> 03-6681677
@@ -472,17 +474,14 @@ function Home() {
             <div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.2115410550623!2d121.02376307605307!3d24.82243834677672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836e4c802b70f%3A0xc493c344bcdded88!2zMzAy5paw56u557ij56u55YyX5biC6I6K5pWs5LqU6KGXNDPomZ8x!5e0!3m2!1szh-TW!2stw!4v1772369431716!5m2!1szh-TW!2stw"
-    
                 height="400"
-                style={{ border: 0,width:'100%' }}
+                style={{ border: 0, width: "100%" }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
-
-         
         </div>
       </div>
     </>

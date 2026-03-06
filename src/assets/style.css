@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   text-align: center;
+  font-family: "微軟正黑體";
 }
 
 .min-h-screen {
@@ -23,7 +24,8 @@ body {
 
 .mainMenu.sticky {
   height: 107px;
-  position: sticky; top: 0; 
+  position: sticky;
+  top: 0;
   top: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
@@ -221,4 +223,11 @@ div.offcanvas-header {
 div.offcanvas-body .navbar-nav a.nav-link {
   border-bottom: dashed 1px #cbb5cc;
   padding: 15px 10px;
+}
+
+.scrollspy-content {
+    position: relative;
+    height: 200px;
+    margin-top: .5rem;
+    overflow: auto;
 }

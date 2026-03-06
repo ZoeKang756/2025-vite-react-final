@@ -9,10 +9,22 @@ function AdminLayout() {
   const [isCheckedAuth, setIsCheckedAuth] = useState(false);
   const navigate = useNavigate();
 
-  const logout = () => {
-    document.cookie =
-      "hexToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    navigate("/admin/login");
+  const logout = async () => {
+    const token = GetAuthToken();
+    try {
+      const checkRes = await axios.post(
+        `${VITE_BASE_URL}/v2/logout`,
+        {},
+        {
+          headers: { Authorization: token },
+        },
+      );
+      document.cookie =
+        "hexToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      navigate("/admin/login");
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   const checkLogin = async () => {
@@ -42,7 +54,7 @@ function AdminLayout() {
     <>
       {isCheckedAuth ? (
         <div>
-          <div className="container-fluid" style={{padding:'0px'}}>
+          <div className="container-fluid" style={{ padding: "0px" }}>
             <div className="d-flex">
               <div className="w-64 bg-indigo-500 text-white min-h-screen ">
                 <div className="d-flex bg-indigo-700">

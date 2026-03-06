@@ -79,10 +79,6 @@ function SingleOrder() {
                               <div className="text-start fw-bold">
                                 {item.product.title}
                               </div>
-                              <div className="text-start text-secondary">
-                                {item.product.content}
-                              </div>
-
                               <div className="text-decoration-line-through text-secondary my-1">
                                 原價：${item.product.origin_price}
                               </div>
@@ -95,7 +91,7 @@ function SingleOrder() {
                             className="mx-1 fw-bold text-end"
                             style={{ color: "#785571" }}
                           >
-                            ${item.product.price.toLocaleString("en-US")} /{" "}
+                            ${item.product.price.toLocaleString("en-US")} /
                             {item.product.unit}
                           </div>
                         </div>

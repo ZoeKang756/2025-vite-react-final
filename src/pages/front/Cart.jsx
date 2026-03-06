@@ -509,7 +509,8 @@ function Cart() {
               <div
                 className="fs-3"
                 style={{
-                  padding: "200px",
+                  paddingTop: "200px",
+                  paddingBottom: "200px",
                   border: "1px solid #e2cee2",
                   color: "#e2cee2",
                 }}
