@@ -5,7 +5,7 @@ function MessageToast() {
 
   return (
     <div className="toast-container position-fixed bottom-0 end-0 p-3">
-      {messages.map((message, index) => (
+      {messages.map((message) => (
         <div
           key={message.id}
           className="toast show"

@@ -8,12 +8,10 @@ const { VITE_API_PATH, VITE_BASE_URL } = import.meta.env;
 
 function FrontendLayout() {
   const [cartsCount, setCartsCount] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const category = searchParams.get("category");
+  const category = useSearchParams()[0].get("category");
   const location = useLocation();
   const menuOffcanvas = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
-  const [isStickySub, setIsStickySub] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleCartChange = (data) => {
@@ -45,7 +43,9 @@ function FrontendLayout() {
     menuOffcanvas.current = new bootstrap.Offcanvas(
       document.getElementById("menuOffcanvas"),
     );
-    getCart();
+    setTimeout(() => {
+      getCart();
+    }, 100);
   }, [cartsCount]);
 
   useEffect(() => {
@@ -55,13 +55,6 @@ function FrontendLayout() {
         setIsSticky(true);
       } else {
         setIsSticky(false);
-      }
-
-      // 判斷是否向上捲動
-      if (window.scrollY > lastScrollY) {
-        // setIsStickySub(true);
-      } else {
-        // setIsStickySub(false);
       }
 
       setTimeout(() => {
@@ -78,9 +71,7 @@ function FrontendLayout() {
   return (
     <>
       <div className="container px-0">
-        <div
-          className={`bg-white mainMenu ${isSticky && "sticky"} ${isStickySub && "showSub"}`}
-        >
+        <div className={`bg-white mainMenu ${isSticky && "sticky"}`}>
           <div className="navbarMenu1">
             <div className="py-2 d-flex flex-nowrap justify-content-between text-secondary ">
               <Link className="navbar-brand" to="/">

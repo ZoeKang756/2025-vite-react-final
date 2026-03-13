@@ -89,7 +89,7 @@ function Orders() {
               </div>
             ) : (
               <div>
-                {orders.map((order, index) => (
+                {orders.map((order) => (
                   <div key={`table-${order.id}`}>
                     <table
                       className="table rounded"
@@ -177,9 +177,9 @@ function Orders() {
                                   ([pid, item], i) => (
                                     <div
                                       key={`item ${pid}`}
-                                      className="d-flex flex-wrap justify-content-between border-bottom py-1"
+                                      className="row border-bottom py-1"
                                     >
-                                      <div>
+                                      <div className="col-12 col-md-4">
                                         <div className="fw-bold">
                                           {i + 1}. {item.product.title}
                                         </div>
@@ -193,12 +193,12 @@ function Orders() {
                                           }}
                                         />
                                       </div>
-                                      <div className="text-decoration-line-through text-secondary">
+                                      <div className="col-12 col-md-4 text-decoration-line-through text-secondary">
                                         原價：$
                                         {item.product.origin_price}
                                       </div>
 
-                                      <div>
+                                      <div className="col-12 col-md-4">
                                         $
                                         {item.product.price.toLocaleString(
                                           "en-US",

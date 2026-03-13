@@ -44,10 +44,9 @@ function SingleProduct() {
     e.preventDefault();
     const data = { product_id: id, qty: 1 };
     try {
-      const response = await axios.post(
-        `${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/cart`,
-        { data: data },
-      );
+      await axios.post(`${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/cart`, {
+        data: data,
+      });
       showSuccessMsg("加入購物車成功");
       getCart();
     } catch (error) {

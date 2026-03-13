@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import Loading from "../../components/Loading";
@@ -59,7 +59,7 @@ function SingleOrder() {
                     <div className="col-md-2 text-start">數量</div>
                     <div className="col-md-1 text-end">小計</div>
                   </div>
-                  {Object.entries(orderData.products).map(([pid, item]) => (
+                  {Object.entries(orderData.products).map(([item]) => (
                     <div key={item.id}>
                       <div
                         className="row py-2"

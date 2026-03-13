@@ -1,8 +1,5 @@
 import { Link, NavLink } from "react-router";
 import pic1 from "/images/622706233_1495709359230857_4968142213626478764_n.jpg";
-import carouselPic1 from "/images/photo-1612423284934-2850a4ea6b0f.jpg";
-import carouselPic2 from "/images/photo-1441984904996-e0b6ba687e04.jpg";
-import carouselPic3 from "/images/premium_photo-1701204056808-22fc818affec.jpg";
 import FBVideoPlayer from "../../components/FBVideoPlayer";
 
 import newPic3 from "/images/633423794_1512483214220138_8779339706135435643_n.jpg";

@@ -12,7 +12,7 @@ function AdminLayout() {
   const logout = async () => {
     const token = GetAuthToken();
     try {
-      const checkRes = await axios.post(
+      await axios.post(
         `${VITE_BASE_URL}/v2/logout`,
         {},
         {
@@ -33,11 +33,7 @@ function AdminLayout() {
       const config = {
         headers: { Authorization: token },
       };
-      const checkRes = await axios.post(
-        `${VITE_BASE_URL}/v2/api/user/check`,
-        {},
-        config,
-      );
+      await axios.post(`${VITE_BASE_URL}/v2/api/user/check`, {}, config);
     } catch (error) {
       console.log(error.response);
       navigate("/admin/login");

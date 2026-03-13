@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import * as bootstrap from "bootstrap";
 import "../../assets/style.css";
-import DeleteConfirmModal from "../../components/deleteConfirmModal";
+import DeleteConfirmModal from "../../components/DeleteConfirmModal";
 import ProductModal from "../../components/ProductModal";
 
 import GetAuthToken from "../../utils/GetAuthToken";
@@ -25,7 +25,6 @@ const PRODUCT_DATA = {
   imagesUrl: [],
   leadTime: "",
 };
-
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -119,14 +118,12 @@ function ProductList() {
   };
 
   useEffect(() => {
-      
     productModalRef.current = new bootstrap.Modal("#productModal", {
       keyboard: false,
     });
 
     viewProductModalRef.current = new bootstrap.Modal("#viewProductModal");
     delProductModalRef.current = new bootstrap.Modal("#delProductModal");
-
 
     // Modal 關閉時移除焦點
     document
@@ -136,7 +133,9 @@ function ProductList() {
           document.activeElement.blur();
         }
       });
-    getProducts();
+    setTimeout(() => {
+      getProducts();
+    }, 100);
   }, []);
 
   return (

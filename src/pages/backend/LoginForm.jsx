@@ -30,6 +30,7 @@ function LoginForm() {
       reset();
       navigate("/admin/product");
     } catch (error) {
+      console.error(error.response?.data);
       setLoginErrMessage("您的帳號或密碼錯誤!");
     } finally {
       setBtnLoadingId(null);

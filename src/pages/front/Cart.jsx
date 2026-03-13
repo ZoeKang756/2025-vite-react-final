@@ -46,7 +46,7 @@ function Cart() {
     setBtnLoadingId(e.target.id);
     e.preventDefault();
     try {
-      const response = await axios.delete(
+      await axios.delete(
         `${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/cart/${id}`,
       );
       showSuccessMsg("購物車更新成功");
@@ -64,7 +64,7 @@ function Cart() {
     e.preventDefault();
 
     try {
-      const response = await axios.delete(
+      await axios.delete(
         `${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/carts`,
       );
       showSuccessMsg("購物車清空成功");
@@ -113,7 +113,7 @@ function Cart() {
     };
 
     try {
-      const response = await axios.put(
+      await axios.put(
         `${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/cart/${id}`,
         { data: data },
       );
