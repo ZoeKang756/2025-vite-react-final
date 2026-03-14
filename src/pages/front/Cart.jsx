@@ -170,7 +170,7 @@ function Cart() {
                   <div className="row py-1" style={{ color: "#b99cba" }}>
                     <div className="col-md-1"></div>
                     <div className="col-md-5">品項</div>
-                    <div className="col-md-2 text-end">單價</div>
+                    <div className="col-md-3 text-end">單價</div>
                     <div className="col-md-2 text-start">數量</div>
                     <div className="col-md-1 text-end">小計</div>
                   </div>
@@ -234,7 +234,7 @@ function Cart() {
                           </div>
                         </div>
 
-                        <div className="col-md-2 py-1">
+                        <div className="col-md-3 py-1">
                           <div
                             className="mx-1 fw-bold text-end"
                             style={{ color: "#785571" }}

@@ -16,7 +16,6 @@ function FrontendLayout() {
 
   const handleCartChange = (data) => {
     setCartsCount(data);
-    console.log(`購物車數量變更${data}`);
   };
 
   const getCart = async () => {

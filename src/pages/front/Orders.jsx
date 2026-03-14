@@ -47,7 +47,6 @@ function Orders() {
     } else {
       updatedCollapses.splice(index, 1);
     }
-    console.log(updatedCollapses);
     setCollapseShow(updatedCollapses);
   };
 

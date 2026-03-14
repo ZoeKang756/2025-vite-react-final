@@ -14,12 +14,11 @@ function Shop() {
         className="text-start p-2 mb-3 rounded"
         style={{ color: "#958c98", border: "solid 1px #bfb3c2 " }}
       >
-        {" "}
         <h3 className="fs-6">團購說明</h3>
         <p>
           請先加<a href="https://www.facebook.com/li.hui.mai.2025">李慧買</a>
           好友，才能入社哦！
-          <i class="bi bi-people-fill"></i>
+          <i className="bi bi-people-fill"></i>
           <a href="https://www.facebook.com/groups/171949173180343">
             蜜柑太太 日本連線代購
           </a>
