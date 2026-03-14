@@ -59,7 +59,7 @@ function Home() {
                     <div className="col-lg-6 col-sm-12">
                       <img
                         src={newPic3}
-                        className="d-block float-end"
+                        className="d-block"
                         style={{
                           width: "100%",
                           objectFit: "contain",
@@ -94,7 +94,7 @@ function Home() {
                     <div className="col-lg-6 col-sm-12">
                       <img
                         src={newPic2}
-                        className="d-block float-end"
+                        className="d-block"
                         style={{
                           width: "100%",
                           objectFit: "contain",
@@ -112,15 +112,15 @@ function Home() {
 
                         <p>
                           把喜歡的版型、舒服的質感一次收藏，
-                          用更甜的價格，迎接新的季節。 數量有限，錯過真的會心痛
-                          💛
+                          <br />
+                          用更甜的價格，迎接新的季節。
+                          <br /> 數量有限，錯過真的會心痛 💛
                         </p>
 
                         <p>線上姐妹這裡看喔👇👇👇👇</p>
                         <p>
-                          Line社群：
                           <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fline.me%2Fti%2Fg2%2FEJ8uK7SDA0RfQ33lII2KIYISfMiz-UvKMLpwtw%3Futm_source%3Dinvitation%26utm_medium%3Dlink_copy%26utm_campaign%3Ddefault%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBEyOVlhZXdweFJMWU5Mcm9Zb3NydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5Mjft3l10F6X1C4p08KrNTPT4hC9jUjuAGPcpM20JTR1MazuDh4zgtI58JzA_aem_NXW0ct_4aLmQu118gLXDSg&h=AT5s_CVt-NJAtCHyDPRpJUCh1C2Ehg4_3yMjZctCforhJIp0Ogcw-ylcynAz_rMB0w4PEHFI57VdnvurvQ5bkraPP6tLLPHsuYwtTdYYwWnW5rY0uOuzgOhW_4-zDzHlFTMddPQ0MgiP74mD&__tn__=-UK*F&c[0]=AT62vlHx6LqyFvUzVjNJ23pLAXDTbILErzW16jzj3dx9Z-Yz8hxpHINa3oGtE-dqhwOiAIs21yExGssjKGFllL_bLUG5s_PUFZh1UUNH_EILGZxxc-qN1xaO6_rhgMyaeI-NAEmdkq0Ul5yMS37w_cD4_HO1Knt7RizboxykBeg05LQOGuKrgX2xXqLujTuE8BIQgEB4jihhBNPEabBuBDL82Q">
-                            https://line.me/....../EJ8uK7SDA0RfQ33lII2KIYISfMiz......{" "}
+                            Line社群
                           </a>
                         </p>
 
@@ -138,7 +138,7 @@ function Home() {
                     <div className="col-lg-6 col-sm-12">
                       <img
                         src={newPic1}
-                        className="d-block float-end"
+                        className="d-block"
                         style={{
                           width: "100%",
                           objectFit: "contain",
@@ -147,7 +147,7 @@ function Home() {
                       />
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                      <div className="p-3  h-100">
+                      <div className="p-3 h-100">
                         <h1 className="fs-4">
                           🧧我們新增了LINE 官方＋LINE 社群囉！🧧
                         </h1>
@@ -160,9 +160,11 @@ function Home() {
                           點擊加入，和我們更靠近一點。 現在加入 Inod LINE 官方，
                           直接送你 $100 購物金 🤍✨
                           新品資訊搶先看、限時優惠不漏接，
-                          還有不定時的小驚喜在等你。 Line官方連結：
-                          https://lin.ee/SE9H3Jo Line社群：
-                          https://line.me/....../EJ8uK7SDA0RfQ33lII2KIYISfMiz......{" "}
+                          還有不定時的小驚喜在等你。<br/>
+                          <a href="https://lin.ee/SE9H3Jo">Line官方連結</a><br/>
+                          <a href="https://line.me/....../EJ8uK7SDA0RfQ33lII2KIYISfMiz......">
+                            Line社群
+                          </a>
                         </p>
 
                         <p className="text-secondary align-right">
