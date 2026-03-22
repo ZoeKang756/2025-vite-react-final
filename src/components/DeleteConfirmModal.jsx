@@ -29,8 +29,7 @@ function DeleteConfirmModal({
           : [response.data.message];
         deleteFailure(errMsg);
       }
-    } catch (error) {
-      console.error("產品刪除失敗", error.response?.data);
+    } catch{
       deleteFailure(["產品刪除失敗"]);
     } finally {
       setIsSubmit(false);

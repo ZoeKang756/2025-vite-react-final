@@ -22,8 +22,8 @@ function SingleProduct() {
 
       setProduct(response.data.product);
       setPrimaryImage(response.data.product.imageUrl);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
+      // error
     }
   };
 
@@ -34,8 +34,8 @@ function SingleProduct() {
       );
 
       handleCartChange(res.data.data.carts.length);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
+      // error
     }
   };
 
@@ -49,9 +49,8 @@ function SingleProduct() {
       });
       showSuccessMsg("加入購物車成功");
       getCart();
-    } catch (error) {
+    } catch {
       showErrorMsg("加入購物車失敗");
-      console.error(error.response?.data);
     } finally {
       setBtnLoadingId(null);
     }
@@ -87,18 +86,18 @@ function SingleProduct() {
           </h5>
         </div>
         <div className="m-1 row justify-content-between">
-          <div className="col-lg-8 col-12 d-flex flex-wrap justify-content-start">
+          <div className="col-lg-8 d-flex flex-wrap justify-content-start">
             <div className="row">
-              <div className="col-lg-9 col-12">
+              <div className="col-lg-9">
                 <div className="">
                   <img
                     src={primaryImage}
-                    alt=""
+                    alt="主要產品圖"
                     style={{ objectFit: "cover" }}
                   />
                 </div>
               </div>
-              <div className="col-lg-3  col-12">
+              <div className="col-lg-3">
                 <div className="d-flex flex-wrap justify-content-start">
                   <div
                     className="images-thumbnails"
@@ -107,7 +106,7 @@ function SingleProduct() {
                     <img
                       src={product.imageUrl}
                       onClick={() => setPrimaryImage(product.imageUrl)}
-                      alt=""
+                      alt="其他產品圖"
                       style={{ overflow: "hidden" }}
                     />
                   </div>
@@ -121,7 +120,7 @@ function SingleProduct() {
                           <img
                             src={img}
                             onClick={() => setPrimaryImage(img)}
-                            alt=""
+                            alt="產品縮圖"
                             style={{ overflow: "hidden" }}
                           />
                         </div>
@@ -131,7 +130,7 @@ function SingleProduct() {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-12 ">
+          <div className="col-lg-4">
             <div className="my-1 p-3 shadow-sm border-bottom text-start">
               {product.content}
             </div>

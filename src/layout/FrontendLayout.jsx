@@ -25,8 +25,8 @@ function FrontendLayout() {
       );
 
       setCartsCount(res.data.data.carts.length);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
+      // error
     }
   };
 
@@ -46,6 +46,10 @@ function FrontendLayout() {
       getCart();
     }, 100);
   }, [cartsCount]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {

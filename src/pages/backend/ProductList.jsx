@@ -52,8 +52,8 @@ function ProductList() {
       );
       setProducts(response.data.products);
       setPagination(response.data.pagination);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch{
+      // error
     }
   };
 

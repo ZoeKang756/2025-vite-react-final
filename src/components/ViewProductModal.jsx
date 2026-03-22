@@ -69,7 +69,7 @@ function ViewProductModal({ tempProductData }) {
                             src={photo}
                             className="card-img-top images rounded border p-1"
                             alt="其他圖片"
-                          />{" "}
+                          />
                         </div>
                       ))}
                     </div>

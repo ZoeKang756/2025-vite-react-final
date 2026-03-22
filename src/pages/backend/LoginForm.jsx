@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Loading from "../../components/Loading";
+import GetAuthToken from "../../utils/GetAuthToken";
 
 const { VITE_BASE_URL } = import.meta.env;
 
@@ -29,15 +30,29 @@ function LoginForm() {
 
       reset();
       navigate("/admin/product");
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
       setLoginErrMessage("您的帳號或密碼錯誤!");
     } finally {
       setBtnLoadingId(null);
     }
   };
 
-  useEffect(() => {}, []);
+  const checkLogin = async () => {
+    const token = GetAuthToken();
+    try {
+      const config = {
+        headers: { Authorization: token },
+      };
+      await axios.post(`${VITE_BASE_URL}/v2/api/user/check`, {}, config);
+      navigate("/admin/product");
+    } catch {
+      // error
+    } 
+  };
+
+  useEffect(() => {
+    checkLogin();
+  }, []);
 
   return (
     <div className="container-fluid login bg-info">
@@ -85,13 +100,16 @@ function LoginForm() {
             </div>
             <button
               className="btn btn-lg btn-primary w-100 mt-3"
-              type="submit" id="loginSubmitBtn"
+              type="submit"
+              id="loginSubmitBtn"
               disabled={btnLoadingId && isSubmitting}
               onClick={(e) => setBtnLoadingId(e.target.id)}
             >
-              {btnLoadingId  && isSubmitting && btnLoadingId === "loginSubmitBtn" && (
-                <Loading isShow={btnLoadingId} size={"20"}></Loading>
-              )}
+              {btnLoadingId &&
+                isSubmitting &&
+                btnLoadingId === "loginSubmitBtn" && (
+                  <Loading isShow={btnLoadingId} size={"20"}></Loading>
+                )}
               登入
             </button>
           </form>
@@ -108,7 +126,7 @@ function LoginForm() {
           </div>
         </div>
       </div>
-      <p className="mt-5 mb-3 text-muted">&copy; 2024~∞ - 六角學院</p>
+      <p className="mt-5 mb-3 text-muted"> © Copyright - INOD</p>
     </div>
   );
 }

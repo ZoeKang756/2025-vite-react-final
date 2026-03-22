@@ -1,7 +1,5 @@
-import { Link, NavLink } from "react-router";
 import pic1 from "/images/622706233_1495709359230857_4968142213626478764_n.jpg";
 import FBVideoPlayer from "../../components/FBVideoPlayer";
-
 import newPic3 from "/images/633423794_1512483214220138_8779339706135435643_n.jpg";
 import newPic2 from "/images/641366428_1522727963195663_324696250829535432_n.jpg";
 import newPic1 from "/images/635090669_1514084747393318_3546082590376449706_n.jpg";
@@ -56,7 +54,7 @@ function Home() {
               <div className="carousel-item active">
                 <div className="d-flex flex-wrap justify-content-center container-fluid">
                   <div className="row">
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <img
                         src={newPic3}
                         className="d-block"
@@ -64,10 +62,10 @@ function Home() {
                           width: "100%",
                           objectFit: "contain",
                         }}
-                        alt="..."
+                        alt="新春休假公告"
                       />
                     </div>
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <div className="p-3 h-100">
                         <h1 className="fs-4">🧧新春休假公告🧧</h1>
                         <p>
@@ -91,7 +89,7 @@ function Home() {
               <div className="carousel-item">
                 <div className="d-flex flex-wrap justify-content-between container-fluid">
                   <div className="row">
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <img
                         src={newPic2}
                         className="d-block"
@@ -99,10 +97,10 @@ function Home() {
                           width: "100%",
                           objectFit: "contain",
                         }}
-                        alt="..."
+                        alt="Inod 換季出清限時登場"
                       />
                     </div>
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <div className="p-3  h-100">
                         <h1 className="fs-4">🧧 Inod 換季出清限時登場！🧧</h1>
 
@@ -135,7 +133,7 @@ function Home() {
               <div className="carousel-item">
                 <div className="d-flex flex-wrap justify-content-between container-fluid">
                   <div className="row">
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <img
                         src={newPic1}
                         className="d-block"
@@ -143,10 +141,10 @@ function Home() {
                           width: "100%",
                           objectFit: "contain",
                         }}
-                        alt="..."
+                        alt="我們新增了LINE 官方＋LINE 社群囉！"
                       />
                     </div>
-                    <div className="col-lg-6 col-sm-12">
+                    <div className="col-lg-6">
                       <div className="p-3 h-100">
                         <h1 className="fs-4">
                           🧧我們新增了LINE 官方＋LINE 社群囉！🧧
@@ -262,7 +260,7 @@ function Home() {
                 src={pic1}
                 className="card-img-top object-fit-cover"
                 style={{ borderRadius: "0px", height: "25rem" }}
-                alt="..."
+                alt="秋冬外套節"
               />
             </div>
 
@@ -288,7 +286,7 @@ function Home() {
                 src="https://images.unsplash.com/photo-1554568218-0f1715e72254?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D"
                 className="card-img-top object-fit-cover"
                 style={{ borderRadius: "0px", height: "25rem" }}
-                alt="..."
+                alt="春夏新款"
               />
             </div>
 
@@ -316,7 +314,7 @@ function Home() {
                   height: "25rem",
                   borderRadius: "0px",
                 }}
-                alt="..."
+                alt="日本連線快閃"
               />
             </div>
 
@@ -342,7 +340,7 @@ function Home() {
                 src="https://images.unsplash.com/photo-1630932245848-4850ae369ba4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHxjbG90aGVzfGVufDB8fDB8fHww"
                 className="card-img-top object-fit-cover"
                 style={{ borderRadius: "0px", height: "25rem" }}
-                alt="..."
+                alt="秋冬現貨折扣"
               />
             </div>
 

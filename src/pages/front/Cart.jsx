@@ -35,8 +35,8 @@ function Cart() {
       );
       setCartData(response.data.data);
       handleCartChange(response.data.data.carts.length);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
+      // error
     } finally {
       setIsShowLoading(false);
     }
@@ -51,9 +51,8 @@ function Cart() {
       );
       showSuccessMsg("購物車更新成功");
       getCarts();
-    } catch (error) {
+    } catch {
       showErrorMsg("購物車更新失敗");
-      console.error(error.response?.data);
     } finally {
       setBtnLoadingId(null);
     }
@@ -69,9 +68,8 @@ function Cart() {
       );
       showSuccessMsg("購物車清空成功");
       getCarts();
-    } catch (error) {
+    } catch  {
       showErrorMsg("購物車清空失敗");
-      console.error(error.response?.data);
     } finally {
       setBtnLoadingId(null);
     }
@@ -96,8 +94,7 @@ function Cart() {
       reset();
       handleCartChange(0);
       navigate(`/order/${response.data.orderId}`);
-    } catch (error) {
-      console.log(error);
+    } catch {
       showErrorMsg("購物車訂單成立失敗!");
     } finally {
       setBtnLoadingId(null);
@@ -119,9 +116,8 @@ function Cart() {
       );
       getCarts();
       showSuccessMsg("購物車更新成功");
-    } catch (error) {
+    } catch {
       showErrorMsg("購物車更新失敗!");
-      console.error(error.response?.data);
     }
   };
 

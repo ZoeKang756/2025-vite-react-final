@@ -145,8 +145,8 @@ function ProductModal({
             : response.data.message.message;
         updateFailure([errMsg]);
       }
-    } catch (error) {
-      console.log(error);
+    } catch {
+      // console.log(error);
     } finally {
       setIsUpload(false);
     }

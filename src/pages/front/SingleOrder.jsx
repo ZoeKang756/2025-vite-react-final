@@ -20,8 +20,8 @@ function SingleOrder() {
         `${VITE_BASE_URL}/v2/api/${VITE_API_PATH}/order/${id}`,
       );
       setOrderData(response.data.order);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch  {
+      // error
     } finally {
       setIsShowLoading(false);
     }
@@ -59,8 +59,8 @@ function SingleOrder() {
                     <div className="col-md-2 text-start">數量</div>
                     <div className="col-md-1 text-end">小計</div>
                   </div>
-                  {Object.entries(orderData.products).map(([item]) => (
-                    <div key={item.id}>
+                  {Object.entries(orderData.products).map(([key,item]) => (
+                    <div key={`orderData_${key}`}>
                       <div
                         className="row py-2"
                         style={{ borderTop: "1px solid #e2cee2" }}

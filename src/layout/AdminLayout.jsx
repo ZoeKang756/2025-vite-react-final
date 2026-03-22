@@ -22,8 +22,8 @@ function AdminLayout() {
       document.cookie =
         "hexToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       navigate("/admin/login");
-    } catch (error) {
-      console.log(error.response);
+    } catch {
+      // error
     }
   };
 
@@ -34,8 +34,7 @@ function AdminLayout() {
         headers: { Authorization: token },
       };
       await axios.post(`${VITE_BASE_URL}/v2/api/user/check`, {}, config);
-    } catch (error) {
-      console.log(error.response);
+    } catch {
       navigate("/admin/login");
     } finally {
       setIsCheckedAuth(true);
@@ -91,11 +90,7 @@ function AdminLayout() {
                     </button>
                   </div>
                   <div className="mx-1">
-                    <button
-                      className="btn btn-secondary mb-1"
-                      type="button"
-                      onClick={logout}
-                    >
+                    <button className="btn btn-secondary mb-1" type="button">
                       <i className="bi bi-gear me-1"></i>
                       系統設定
                     </button>

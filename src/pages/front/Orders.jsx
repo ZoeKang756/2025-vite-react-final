@@ -23,8 +23,8 @@ function Orders() {
 
       setOrders(response.data.orders);
       setPagination(response.data.pagination);
-    } catch (error) {
-      console.error(error.response?.data);
+    } catch {
+       // error
     } finally {
       setIsShowLoading(false);
     }
@@ -178,7 +178,7 @@ function Orders() {
                                       key={`item ${pid}`}
                                       className="row border-bottom py-1"
                                     >
-                                      <div className="col-12 col-md-4">
+                                      <div className="col-md-4">
                                         <div className="fw-bold">
                                           {i + 1}. {item.product.title}
                                         </div>
@@ -192,12 +192,12 @@ function Orders() {
                                           }}
                                         />
                                       </div>
-                                      <div className="col-12 col-md-4 text-decoration-line-through text-secondary">
+                                      <div className="col-md-4 text-decoration-line-through text-secondary">
                                         原價：$
                                         {item.product.origin_price}
                                       </div>
 
-                                      <div className="col-12 col-md-4">
+                                      <div className="col-md-4">
                                         $
                                         {item.product.price.toLocaleString(
                                           "en-US",
