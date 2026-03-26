@@ -107,8 +107,8 @@ function ProductModal({
           : [response.data.message];
         updateFailure(errMsg);
       }
-    } catch (error) {
-      console.error("更新失敗：", error.response?.data);
+    } catch {
+      // error
     } finally {
       setIsSubmit(false);
     }
@@ -146,7 +146,7 @@ function ProductModal({
         updateFailure([errMsg]);
       }
     } catch {
-      // console.log(error);
+      // error
     } finally {
       setIsUpload(false);
     }

@@ -455,7 +455,7 @@ function Home() {
                 <a href="#">Inod日本精品服飾</a>
               </p>
               <p>
-                <i className="bi bi-telephone-fill"></i> 03-6681677
+                <i className="bi bi-telephone-fill"></i> <a href="tel:+886-3-6681677">03-6681677</a>
               </p>
               <p>
                 <i className="bi bi-line"></i> ID：6681677
